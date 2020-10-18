@@ -15,7 +15,8 @@ only = {
 }
 
 exclude_files = {
-	'./tests/*'
+	'./tests/*',
+	'.*'
 }
 
 read_globals = {

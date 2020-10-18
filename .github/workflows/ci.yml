@@ -42,7 +42,6 @@ jobs:
       - name: Lint
         uses: nebularg/actions-luacheck@v1
         with:
-          args: "--exclude-files .lua*/**"
           annotate: error
       - name: Test
         run: lua tests/Items.lua
