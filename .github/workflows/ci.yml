@@ -69,8 +69,15 @@ jobs:
         env:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload packages to github
+      - name: Upload package sources to github
+        uses: actions/upload-artifact@v2
+        with:
+          name: sources
+          path: |
+            .release/**
+            !.release/*.zip
+      - name: Upload package archives to github
         uses: actions/upload-artifact@v2
         with:
           name: packages
-          path: .release/AdiButtonAuras*.zip
+          path: .release/*.zip
