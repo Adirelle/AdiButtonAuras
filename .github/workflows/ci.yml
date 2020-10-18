@@ -1,13 +1,8 @@
 name: CI
 
 on:
-  push:
-    tags: '[0-9]+.[0-9]+[0-9]+'
-    branches:
-      - master
-      - workflows
-  pull_request:
-    branches: master
+  - push
+  - pull_request
 
 jobs:
   build:
