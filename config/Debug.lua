@@ -19,7 +19,7 @@ You should have received a copy of the GNU General Public License
 along with AdiButtonAuras. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local _, private = ...
+local _, priv ate = ...
 
 local _G = _G
 
