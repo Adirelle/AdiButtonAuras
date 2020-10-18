@@ -13,25 +13,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: true
-      - name: Setup Lua cache
-        id: cache-lua
-        uses: actions/cache@v2
-        with:
-          path: |
-            .lua
-            .luarocks
-          key: ${{ runner.os }}-lua-${{ hashFiles('.github/luarocks') }}
-          restore-keys: ${{ runner.os }}-lua-
       - name: Install Lua
-        if: steps.cache-lua.outputs.cache-hit != 'true'
         uses: leafo/gh-actions-lua@v6
         with:
           luaVersion: "5.1.5"
       - name: Install LuaRocks
-        if: steps.cache-lua.outputs.cache-hit != 'true'
         uses: leafo/gh-actions-luarocks@v2
       - name: Install testing libraries
-        if: steps.cache-lua.outputs.cache-hit != 'true'
         run: |
           # luarocks install
           while read ROCK VERSION; do
