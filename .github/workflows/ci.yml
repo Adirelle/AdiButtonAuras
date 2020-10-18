@@ -18,8 +18,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ~/.lua
-            ~/.luarocks
+            .lua
+            .luarocks
           key: ${{ runner.os }}-lua-${{ hashFiles('.github/luarocks') }}
           restore-keys: ${{ runner.os }}-lua-
       - name: Install Lua
